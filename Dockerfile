@@ -5,7 +5,7 @@ MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 RUN apt-get update && apt-get install python3-pip libav-tools build-essential -y
 RUN pip3 install watchdog gmusicapi bs4
 
-WORKDIR /root/google-music-uploader
+WORKDIR /root
 ADD ./daemon.sh /root/daemon.sh
 ADD ./google-music-uploader/daemon.py /root/daemon.py
 ADD ./google-music-uploader/auth.py /root/auth.py
