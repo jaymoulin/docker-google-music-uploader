@@ -1,12 +1,14 @@
 #!/bin/bash
-trap 'kill -TERM $PID' TERM INT
 
 if [ ! -f /root/oauth ]; then
+    trap 'exit 0' TERM INT
     while :
     do
-        /bin/true
+        sleep 2
+	/bin/true
     done
 else
+    trap 'kill -TERM $PID' TERM INT
     /root/daemon.py /media/library &
     PID=$!
     wait $PID

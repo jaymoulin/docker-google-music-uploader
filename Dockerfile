@@ -1,9 +1,9 @@
-FROM resin/rpi-raspbian
+FROM sdhibit/rpi-raspbian
 
 MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 
-RUN apt-get update && apt-get install python3-pip libav-tools build-essential -y
-RUN pip3 install watchdog gmusicapi bs4
+RUN apt-get update && apt-get install python3-pip libav-tools build-essential -y && \
+	pip3 install watchdog gmusicapi bs4 && apt-get clean && apt-get autoremove -y
 
 WORKDIR /root
 ADD ./daemon.sh /root/daemon.sh
