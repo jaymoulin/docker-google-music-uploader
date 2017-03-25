@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f /root/oauth ]; then
+if [ ! -f /root/oauth/oauth.key ]; then
     trap 'exit 0' TERM INT
     while :
     do
@@ -9,7 +9,7 @@ if [ ! -f /root/oauth ]; then
     done
 else
     trap 'kill -TERM $PID' TERM INT
-    /root/daemon.py /media/library &
+    /root/daemon.py /media/library /root/oauth/oauth.key &
     PID=$!
     wait $PID
     wait $PID

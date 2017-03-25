@@ -16,12 +16,13 @@ docker run -d --restart=always -v /path/to/your/library:/media/library --name go
 ```
 
 You must define your path to your library in a volume to `/media/library`
+You can also mount another volume to `/root/oauth` folder to retrieve your oauth key 
 
 Configuration
 ---
 First, you have to allow the container to access your Google Music account
 ```
-docker exec -ti googlemusic auth.py
+docker exec -ti googlemusic auth
 ```
 Then follow prompted instructions.
 
