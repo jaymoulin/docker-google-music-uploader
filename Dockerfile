@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install python3-pip libav-tools build-essential -y
     pip3 install watchdog gmusicapi bs4 && apt-get clean && apt-get autoremove -y
 
 ADD ./daemon.sh /root/daemon.sh
-ADD ./google-music-manager/upload-daemon.py /root/daemon.py
+ADD ./google-music-manager/uploader-daemon.py /root/daemon.py
 ADD ./google-music-manager/auth.py /root/auth.py
 ADD ./auth.sh /root/auth
 RUN chmod +x /root/daemon.py
