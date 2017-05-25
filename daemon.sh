@@ -9,7 +9,7 @@ if [ ! -f /root/oauth/oauth.key ]; then
     done
 else
     trap 'kill -TERM $PID' TERM INT
-    /root/daemon.py /media/library /root/oauth/oauth.key True &
+    python3 /root/daemon.py /media/library /root/oauth/oauth.key True &
     PID=$!
     wait $PID
     wait $PID
