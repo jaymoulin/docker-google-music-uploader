@@ -1,8 +1,8 @@
-FROM sdhibit/rpi-raspbian
+FROM jaymoulin/rpi-python:3.6.1
 
 MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 
-RUN apt-get update && apt-get install python3-pip libav-tools build-essential -y && mkdir /root/oauth/ && \
+RUN apt-get update && apt-get install libav-tools build-essential -y && mkdir /root/oauth/ && \
     pip3 install watchdog gmusicapi bs4 && apt-get clean && apt-get autoremove -y
 
 ADD ./daemon.sh /root/daemon.sh
