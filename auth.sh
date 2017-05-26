@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/root/oauth.py /root/oauth/oauth.key
+python3 /root/auth.py /root/oauth/oauth.key
