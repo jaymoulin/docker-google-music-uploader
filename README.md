@@ -6,7 +6,8 @@ Raspberry PI - Google Music Uploader - Docker Image
 [![latest release](https://img.shields.io/github/release/jaymoulin/docker-rpi-google-music-uploader.svg "latest release")](http://github.com/jaymoulin/docker-rpi-google-music-uploader/releases)
 
 
-This image allows you to watch a folder and upload all new MP3 added to your Google Music Library
+This image allows you to watch a folder and upload all new MP3 added to your Google Music Library.
+This image is based on [Google MusicManager](https://github.com/jaymoulin/google-music-manager)
 
 Installation
 ---
