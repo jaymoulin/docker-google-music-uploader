@@ -1,9 +1,9 @@
-FROM ctarwater/armhf-alpine-rpi-base
+FROM jaymoulin/rpi-python:alpine
 
 MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 
-RUN apk update && apk add wget gcc g++ python3-dev && mkdir /root/oauth/ && \
-    pip3 install watchdog gmusicapi bs4 && apk del wget gcc g++ --purge
+RUN apk update && apk add gcc g++ ffmpeg && mkdir /root/oauth/ && \
+    pip3 install watchdog gmusicapi bs4
 
 ADD ./daemon.sh /root/daemon.sh
 ADD ./google-music-manager/uploader-daemon.py /root/daemon.py

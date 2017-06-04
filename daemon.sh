@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -f /root/oauth/oauth.key ]; then
     trap 'exit 0' TERM INT
