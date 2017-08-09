@@ -3,10 +3,10 @@ FROM jaymoulin/rpi-python:alpine
 MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 
 RUN apk update && \
-	apk add git gcc g++ --no-cache --virtual .build-deps && \
-	git clone http://github.com/jaymoulin/google-music-manager.git /root/manager && \
+	apk add git gcc g++ linux-headers --no-cache --virtual .build-deps && \
+	git clone https://github.com/jaymoulin/google-music-manager.git /root/manager && \
 	apk add ffmpeg && mkdir /root/oauth/ && \
-    pip3 install watchdog gmusicapi bs4 && \
+    pip3 install watchdog gmusicapi bs4 netifaces && \
 	apk del git --purge .build-deps
 
 ADD ./daemon.sh /root/daemon.sh
