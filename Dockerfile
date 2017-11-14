@@ -9,6 +9,7 @@ RUN apk update && \
     apk del gcc --purge .build-deps
 
 ADD ./daemon.sh /root/daemon.sh
+ADD ./auth.sh /root/auth
 
 VOLUME /media/library
 VOLUME /root/oauth
