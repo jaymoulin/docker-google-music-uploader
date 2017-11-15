@@ -24,6 +24,17 @@ docker run -d --restart=always -v /path/to/your/library:/media/library --name go
 You must define your path to your library in a volume to `/media/library`
 You can also mount another volume to `/root/oauth` folder to retrieve your oauth key 
 
+See environment variables to tweak some behaviour
+
+Environment variables
+---------------------
+
+These environment variable will produce a different behaviour
+
+* `REMOVE` : Remove file on successful upload (boolean, (default: true)) - pass to false if you want to keep files 
+* `UPLOADER_ID` : Identity of your uploader, must be your MAC address in uppercase 
+    (default: false, which means your actual MAC address) - Change this value only if you know what you are doing and had `MAX_PER_MACHINE_USERS_EXCEEDED` error  
+
 Configuration
 ---
 First, you have to allow the container to access your Google Music account
