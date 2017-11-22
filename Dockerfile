@@ -1,6 +1,10 @@
-FROM jaymoulin/rpi-python:alpine
+FROM python:alpine3.6 as builder
 
-MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
+COPY qemu-*-static /usr/bin/
+
+FROM builder
+
+LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
 
 ENV REMOVE=1
 ENV UPLOADER_ID=false
