@@ -15,7 +15,7 @@ manifests:
   -
     image: jaymoulin/google-music-uploader:$VERSION-amd64
     platform:
-      architecture: arm64
+      architecture: amd64
       os: linux
   -
     image: jaymoulin/google-music-uploader:$VERSION-i386
