@@ -15,8 +15,8 @@ RUN apk update && \
     pip3 install MechanicalSoup==0.8.0 google-music-manager-uploader && \
     apk del gcc --purge .build-deps
 
-ADD ./daemon.sh /root/daemon
-ADD ./auth.sh /root/auth
+COPY ./daemon.sh /root/daemon
+COPY ./auth.sh /root/auth
 
 VOLUME /media/library
 VOLUME /root/oauth
