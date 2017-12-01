@@ -1,4 +1,5 @@
 VERSION ?= 0.6.1
+CAHCE ?= --no-cache=1
 FULLVERSION ?= ${VERSION}
 archs = s390x arm32v7 amd64 i386 arm64v8 arm32v6
 
@@ -8,7 +9,7 @@ build:
 	cp /usr/bin/qemu-*-static .
 	$(foreach arch,$(archs), \
 		cat Dockerfile | sed "s/FROM python:alpine/FROM ${arch}\/python:alpine/g" > .Dockerfile; \
-		docker build -t jaymoulin/google-music-uploader:${VERSION}-$(arch) -f .Dockerfile .;\
+		docker build -t jaymoulin/google-music-uploader:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
 	)
 publish:
 	docker push jaymoulin/google-music-uploader
