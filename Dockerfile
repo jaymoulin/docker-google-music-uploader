@@ -6,7 +6,7 @@ FROM builder
 
 LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
 
-ENV REMOVE=1
+ENV REMOVE=0
 ENV UPLOADER_ID=false
 
 RUN apk update && \
