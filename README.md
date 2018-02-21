@@ -36,7 +36,7 @@ These environment variable will produce a different behaviour
 
 ### Example
 ```
-docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic -e REMOVE=false jaymoulin/rpi-google-music-uploader
+docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic -e REMOVE=false jaymoulin/google-music-uploader
 ```
 will not delete files on upload
 
